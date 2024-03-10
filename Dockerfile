@@ -33,8 +33,8 @@ RUN easy-add --var os=${TARGETOS} --var arch=${TARGETARCH}${TARGETVARIANT} \
     --var version=${MC_MONITOR_VERSION} --var app=mc-monitor --file {{.app}} \
     --from ${GITHUB_BASEURL}/itzg/{{.app}}/releases/download/{{.version}}/{{.app}}_{{.version}}_{{.os}}_{{.arch}}.tar.gz
 
-ARG MINECRAFT_BACKUP_VERSION=1.2.1
-ADD ${GITHUB_BASEURL}/nicolaschan/minecraft-backup/releases/download/v${MINECRAFT_BACKUP_VERSION}/backup.sh /usr/bin/minecraft-backup
+ARG MINECRAFT_BACKUP_VERSION=1.2.3
+ADD ${GITHUB_BASEURL}/draoncc/minecraft-backup/releases/download/v${MINECRAFT_BACKUP_VERSION}/backup.sh /usr/bin/minecraft-backup
 RUN chmod +x /usr/bin/minecraft-backup
 
 ARG FORGE_API_KEY
